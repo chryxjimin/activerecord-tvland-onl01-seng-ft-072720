@@ -8,6 +8,6 @@ class Actor < ActiveRecord::Base
 
    def list_roles
      binding.pry
-    self.characters.collect {|character| "#{character.name} - #{character.show.name}"}.join(", ")
+    self.characters.map {|character| "#{character.name} - #{character.show.name}"}.join(", ")
    end
 end
